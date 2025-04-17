@@ -1,28 +1,32 @@
-const express = require("express")
-const app = express()
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
+const user = require("./control/usercontroller");
 
-app.use(express.json())
+const app = express();
+app.use(express.json());
+app.use(cors());
 
-const port = 5000
+// Servir estáticos de /public
+app.use(express.static(path.join(__dirname, "..", "public")));
 
+const port = 5000;
 
-// método GET -> al recurso /
-app.get("/", (req, res) => {
-    res.status(200).send("Hola API")
-})
+// Endpoints de usuarios
+app.get("/users", user.list);
+app.get("/users/:id", user.get);
+app.post("/users", user.create);
+app.put("/users/:id", user.update);
+app.delete("/users/:id", user.delete);
 
-app.post("/", (req, res) => {
-    res.status(201).send("element created")
+// Ruta catch‐all para 404
+app.get("*", (req, res) => {
+  res
+    .status(404)
+    .sendFile(path.join(__dirname, "..", "public", "notfound.html"));
+});
 
-})
-
-app.put("/", (req, res) => {
-    res.status(204).send("NO content in edit")
-
-})
-
-app.delete("/", (req, res) => {
-    res.status(204).send("NO content in delete")
-})
-
-app.listen(port)
+// Levantar el servidor
+app.listen(port, () =>
+  console.log(`Servidor corriendo en http://localhost:${port}`)
+);

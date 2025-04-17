@@ -1,18 +1,13 @@
 {
   "name": "02_apirest",
   "version": "1.0.0",
-  "description": "## Creación del proyeto",
-  "main": "index.js",
-  "directories": {
-    "doc": "doc"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "API REST con Node.js, Express y base de datos JSON local",
+  "main": "src/index.js",
+"scripts": {
+  "start": "node src/index.js"
+},
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   }
 }
