@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>Introducción al DOM</title>
-    </head>
-    <body>
+<head>
+    <!-- Configuración de codificación de caracteres -->
+    <meta charset="UTF-8" />
+    <!-- Configuración para que la página sea responsive -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Título de la página -->
+    <title>Introducción al DOM</title>
+</head>
+<body>
 
-	<h1>Title</h1>
-	<p id="msgText">Parrafo</p>
-	
-	<textArea id="inputText"> valor </textArea>
+    <!-- Encabezado principal de la página -->
+    <h1>Title</h1>
 
-	<button onClick="addTextToList()"> Agregar </button>
-	<form id="formElement">
-	    <ul id="listElements">
-		<li>Elemento 1</li>
-		<li>Elemento 2</li>
-	    </ul>
-	</form>
+    <!-- Párrafo con un identificador único -->
+    <p id="msgText">Parrafo</p> 
 
-	<button onClick="showMessage()" > Show Message</button>
+    <!-- Área de texto para entrada de datos -->
+    <textarea id="inputText"></textarea>
 
-	<script src="index.js"></script>
-    </body>
+    <!-- Botón que ejecuta la función addTextToList() al hacer clic -->
+    <button onclick="addTextToList()">Agregar</button>
+
+    <!-- Formulario que contiene una lista desordenada -->
+    <form id="formElement">
+        <!-- Lista desordenada con elementos iniciales -->
+        <ul id="listElements">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+        </ul>
+    </form>
+
+    <!-- Contador dinámico -->
+    <p id="counter">Total: 2 elementos</p>
+
+    <!-- Botones adicionales -->
+    <button onclick="showMessage()">Show Message</button>
+    <button onclick="clearList()">Borrar lista</button>
+
+    <!-- Archivo JavaScript externo -->
+    <script src="index.js"></script>
+</body>
 </html>
